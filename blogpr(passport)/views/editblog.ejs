@@ -1,0 +1,377 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Business Brokerage</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/frontend/img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/frontend/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/frontend/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/frontend/css/slicknav.css">
+    <link rel="stylesheet" href="assets/frontend/css/animate.min.css">
+    <link rel="stylesheet" href="assets/frontend/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/frontend/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/frontend/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/frontend/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/frontend/css/slick.css">
+    <link rel="stylesheet" href="assets/frontend/css/nice-select.css">
+    <link rel="stylesheet" href="assets/frontend/css/style.css">
+    <link rel="stylesheet" href="assets/frontend/css/responsive.css">
+</head>
+<style>
+    /* .request-back-area .request-content h4 {
+        color: white;
+    }
+
+    textarea {
+        width: 100%;
+        height: 55px;
+        background: transparent;
+        border: 2px solid #295684;
+        border-radius: 5px;
+        padding: 11px 19px;
+        color: #718eab;
+    }
+    .single-slider{
+        width: 100%;
+        height: 100%;
+    }
+
+     */
+
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    /* animation: animateBg 5s linear infinite; */
+}
+
+    /* @keyframes animateBg {
+        100% { filter: hue-rotate(360deg);}
+    } */
+
+body {
+    background: url('https://i.postimg.cc/SRbN0Qxs/bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 40rem;
+    height: 60rem;
+    /* background: #0a0a0a; */
+    /* border-radius: 50%; */
+    overflow: hidden;
+}
+
+    /* .container::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 500px;
+        height: 500px;
+        background: linear-gradient(90deg, transparent, #0598f7, #0598f7);
+        transform-origin: bottom right;
+        animation: animate 6s linear infinite;
+    } */
+
+    /* .container::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 500px;
+        height: 500px;
+        background: linear-gradient(90deg, transparent, #d31580, #d31580);
+        transform-origin: bottom right;
+        animation: animate 6s linear infinite;
+        animation-delay: -3s;
+    } */
+
+        /* @keyframes animate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        } */
+
+form {
+    position: absolute;
+    inset: 2px;
+    background: transparent;
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    position: absolute;
+    top: 25px;
+    color: #d31580;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.uc {
+    position: absolute;
+    top: 100px;
+    width: 300px;
+    border-top: 1px solid #0598f7;
+    text-align: center;
+}
+
+    .uc b {
+        position: relative;
+        top: -15px;
+        width: 150px;
+        height: 25px;
+        color: #0598f7;
+        background: #28292d;
+        font-size: 16px;
+        border: 1px solid #0598f7;
+        border-radius: 50px;
+        display: inline-block;
+    }
+
+.inputBox {
+    position: relative;
+    width: 320px;
+    margin-top: 35px;
+}
+
+    .inputBox input {
+        position: relative;
+        width: 100%;
+        padding: 12px 25px;
+        border-radius: 50px;
+        font-size: 1.1em;
+        color: #26e060;
+        background: transparent;
+        outline: none;
+        border: 1px solid #87a4bd;
+        letter-spacing: .05em;
+    }
+
+    .inputBox label {
+        position: absolute;
+        left: 25px;
+        top: 18px;
+        color: #87a4bd;
+        background: #28292d;
+        padding: 0 2px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: .07em;
+        transform: translateY(-27px);
+        transition: transform .3s ease;
+        pointer-events: none;
+    }
+
+input:invalid + label {
+    transform: translateY(0);
+    background: #28292d; 
+}
+
+input:focus { border-color: #26e060; }
+
+input:focus + label {
+    background: #28292d;
+    color: #26e060;
+    transform: translateY(-27px);
+}
+
+input[type="submit"] {
+    position: relative;
+    top: 40px;
+    width: 320px;
+    background: linear-gradient(to bottom, #0598f7, #4d26b8);
+    padding: 10px;
+    border-radius: 60px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid #0598f7;
+    outline: 3px solid #28292d;
+    transition: all .3s ease-in-out;
+}
+
+    input[type="submit"]:hover, input[type="submit"]:focus {
+        outline: 3px solid #28292d;
+        outline-offset: -6px;
+        letter-spacing: .05em;
+    }
+
+.link-container {
+    position: relative;
+    top: 60px;
+    width: 270px;
+    display: flex;
+    justify-content: center;
+}
+
+    .link-container:last-child { 
+        margin-top: 15px;
+        font-weight: 600; 
+    }
+
+    .link-container a {
+        color: #87a4bd;
+        font-size: 1em;
+        text-decoration: none;
+        transition: .3s ease;
+    }
+
+        .link-container a:hover {
+            color: #26e060;
+            text-decoration: underline;
+        }
+</style>
+
+<body>
+
+
+    <div class="container">
+        <form  action="/up/<%= single._id %>" method="post" enctype="multipart/form-data" >
+            <h2>Edit Blog</h2>
+            <div class="inputBox">
+                <input type="hidden" value="<%= single._id %>" name="editid">
+                <input type="text" name="title"  value="<%= single.title %>" >
+                <label for="BlogTitle">Blog Title</label>
+            </div>
+
+            <div class="inputBox">
+                <input type="text" id="pass" name="desc" value="<%= single.desc %>"  required>
+                <label for="blog">Blog description</label>
+            </div>
+
+            <div class="inputBox">
+                <input type="text" id="pass" name="category" value="<%= single.category %>"  required>
+                <label for="blog">Blog catagory</label>
+            </div>
+            
+            <div class="inputBox">
+                <input type="file" name="image" placeholder="Blog image">
+                <img class="card-img rounded-0" style="width: 300px;margin-top: 10px;"
+                src="<%= single.image %>" alt="">
+            </div>
+            <input type="submit" value="Edit blog">
+          
+        </form>
+
+        
+    </div>
+
+
+
+    <!-- slider Area Start-->
+    <!-- <div class="slider-area "> -->
+        <!-- Mobile Menu -->
+        <!-- <div class="single-slider slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Edit your Blog</h2>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-8"> -->
+                        <!-- Contact form Start -->
+    
+                        <!-- <form action="/up" method="post" enctype="multipart/form-data">
+                            <div class="form-wrapper">
+                                <form id="contact-form" action="#" method="POST">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="form-box  mb-30">
+                                                <input type="hidden" value="<%= single.id%>" name="editid">
+                                                <input type="text" name="title" value="<%= single.title%>"
+                                                    placeholder="Blog Title">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="form-box mb-30">
+                                                <textarea name="desc" placeholder="Blog description"
+                                                    id=""> <%= single.desc %></textarea>
+    
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 mb-30">
+                                            <div class="form-box  mb-30">
+                                                <input type="file" name="image" placeholder="Blog image">
+                                                <br>
+                                                <img class="card-img rounded-0" style="width: 300px;margin-top: 10px;"
+                                                    src="<%= single.image%>" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <button type="submit" class="send-btn">Edit blog</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ -->
+
+    <!-- All JS Custom Plugins Link Here here -->
+    <script src="./assets/frontend/js/vendor/modernizr-3.5.0.min.js"></script>
+
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/frontend/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/frontend/js/popper.min.js"></script>
+    <script src="./assets/frontend/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets/frontend/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/frontend/js/owl.carousel.min.js"></script>
+    <script src="./assets/frontend/js/slick.min.js"></script>
+
+    <!-- One Page, Animated-HeadLin -->
+    <script src="./assets/frontend/js/wow.min.js"></script>
+    <script src="./assets/frontend/js/animated.headline.js"></script>
+
+    <!-- Scrollup, nice-select, sticky -->
+    <script src="./assets/frontend/js/jquery.scrollUp.min.js"></script>
+    <script src="./assets/frontend/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/frontend/js/jquery.sticky.js"></script>
+    <script src="./assets/frontend/js/jquery.magnific-popup.js"></script>
+
+    <!-- contact js -->
+    <script src="./assets/frontend/js/contact.js"></script>
+    <script src="./assets/frontend/js/jquery.form.js"></script>
+    <script src="./assets/frontend/js/jquery.validate.min.js"></script>
+    <script src="./assets/frontend/js/mail-script.js"></script>
+    <script src="./assets/frontend/js/jquery.ajaxchimp.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="./assets/frontend/js/plugins.js"></script>
+    <script src="./assets/frontend/js/main.js"></script>
+
+</body>
+
+</html>

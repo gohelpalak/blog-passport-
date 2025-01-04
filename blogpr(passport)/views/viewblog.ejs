@@ -1,0 +1,193 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Business Brokerage</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/frontend/img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/frontend/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/frontend/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/frontend/css/slicknav.css">
+    <link rel="stylesheet" href="assets/frontend/css/animate.min.css">
+    <link rel="stylesheet" href="assets/frontend/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/frontend/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/frontend/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/frontend/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/frontend/css/slick.css">
+    <link rel="stylesheet" href="assets/frontend/css/nice-select.css">
+    <link rel="stylesheet" href="assets/frontend/css/style.css">
+    <link rel="stylesheet" href="assets/frontend/css/responsive.css">
+</head>
+<style>
+    /* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    font-family: 'Arial', sans-serif;
+} */
+
+    .card-container {
+        display: flex;
+        gap: 30px;
+    }
+    a, button{
+        color: black !important;
+    }
+
+    .card {
+        background: linear-gradient(135deg, rgba(255, 0, 150, 0.7), rgba(0, 204, 255, 0.7));
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(255, 0, 150, 0.5), 0 0 40px rgba(0, 204, 255, 0.5);
+        padding: 30px;
+        color: white;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        width: 200px;
+        height: 400px !important;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(255, 0, 150, 0.8), 0 0 50px rgba(0, 204, 255, 0.8);
+        cursor: pointer;
+    }
+    .category{
+        background-color: rgb(14, 14, 241);
+        color: white !important;
+        padding: 10px 15px;
+        border-radius: 8px;
+        margin-right: 20px;
+    }
+</style>
+
+<body>
+
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+            <div class="main-header ">
+                <div class="header-top top-bg d-none d-lg-block">
+                    <div class="container-fluid">
+                        <div class="row d-flex justify-content-between align-items-center">
+                            <div class="">
+                                <h2 style="color: white;">Blog Section</h2>
+                            </div>
+                            <div>
+                                <div class="header-right-btn f-right d-none d-lg-block">
+                                    <a href="/logout" class="btn header-btn">Logout</a>
+                                </div>
+                                <div class="header-right-btn f-right d-none d-lg-block mr-3">
+                                    <a href="/addblogpage" class="btn header-btn">Add New Blog</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+
+    <!-- <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Instructional Design Learning Cards</title>
+    </head> -->
+
+    <body>
+
+        <div style="margin-top: 20px; margin-bottom: 20px; display: flex; justify-content: center;">
+            <% const categories=['All','sports','politics','health'] %>
+            <div>
+                <% categories.forEach(category=>{
+                    %>
+                <a href="<%= category==='All' ? '/viewblog':`/viewblog?category=${category}` %>" class="category">
+                    <%= category %></a>
+                <% })%>
+            </div>
+        </div>
+        <div class="card-container">
+
+            <% users.map((val,index)=>{
+                const{title,desc,image }=val %>
+                <div class="card" onclick="cardClicked(1)" style="width: 17%; height: 22%; margin-left: 40px;">
+                    <div class="blog_item_img">
+                        <img class="card-img rounded-0" height="200px" src="<%= image%>" alt="">
+                    </div>
+                    <h2>
+                        <%= val.title%>
+                    </h2>
+                    <p>
+                        <%= val.desc%>
+                    </p>
+                    <div class="" style="display: flex; justify-content: space-between;">
+                        <a href="/delete/<%= val._id %>">Delete</a>
+                        <a href="/edit?id=<%= val.id%>">Edit</a>
+                        <a href="/view<%= val.id%>">View</a>
+
+                    </div>
+                </div>
+                <% })%>
+                
+        </div>
+
+        <script src="script.js"></script>
+    <!-- </body>
+
+    </html> -->
+    <!-- slider Area Start-->
+
+    <!-- JS here -->
+
+    <!-- All JS Custom Plugins Link Here here -->
+    <script src="./assets/frontend/js/vendor/modernizr-3.5.0.min.js"></script>
+
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/frontend/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/frontend/js/popper.min.js"></script>
+    <script src="./assets/frontend/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets/frontend/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/frontend/js/owl.carousel.min.js"></script>
+    <script src="./assets/frontend/js/slick.min.js"></script>
+
+    <!-- One Page, Animated-HeadLin -->
+    <script src="./assets/frontend/js/wow.min.js"></script>
+    <script src="./assets/frontend/js/animated.headline.js"></script>
+
+    <!-- Scrollup, nice-select, sticky -->
+    <script src="./assets/frontend/js/jquery.scrollUp.min.js"></script>
+    <script src="./assets/frontend/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/frontend/js/jquery.sticky.js"></script>
+    <script src="./assets/frontend/js/jquery.magnific-popup.js"></script>
+
+    <!-- contact js -->
+    <script src="./assets/frontend/js/contact.js"></script>
+    <script src="./assets/frontend/js/jquery.form.js"></script>
+    <script src="./assets/frontend/js/jquery.validate.min.js"></script>
+    <script src="./assets/frontend/js/mail-script.js"></script>
+    <script src="./assets/frontend/js/jquery.ajaxchimp.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="./assets/frontend/js/plugins.js"></script>
+    <script src="./assets/frontend/js/main.js"></script>
+
+</body>
+
+</html>
