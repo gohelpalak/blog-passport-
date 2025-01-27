@@ -1,0 +1,51 @@
+<%- include('../header') %>
+
+<div class="row">
+<div class="col-12">
+
+  <table class="table text-center" style="margin-top: 75px;">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Category</th>
+        <th scope="col">Action</th>
+        <th scope="col">Current Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% single.map((cat,i)=> { %>
+
+        <tr>
+            <td>
+                <%= ++i %>
+            </td>
+            <td>
+                <%= cat.name %>
+            </td>
+            <td>
+                <a href="/category/deleteCategory?id=<%=cat.id%>"
+                    class="btn btn-danger py-2"
+                    style="font-size: 16px !important;">
+                    <i class="fa-solid fa-trash-can"></i>
+                </a>
+                <a href="/category/editCategory?id=<%=cat.id%>"
+                    class="btn btn-primary py-1 ms-2 "
+                    style="font-size: 20px !important;">
+                    <i class="fa-solid fa-pen"></i>
+                </a>
+            </td>
+            <td>
+                <a href="/category/changeStatus?id=<%= cat.id %>&status=<%= cat.status %>" 
+                    class="<% if(cat.status == `active`) { %> btn btn-info py-2 px-3 <% } else { %> btn btn-warning py-2 px-3 <% } %>">
+                    <%= cat.status %>
+                </a>
+            </td>
+        </tr>
+
+        <% }) %>
+    </tbody>
+  </table>
+</div>
+</div>
+
+  <%- include('../footer') %>
