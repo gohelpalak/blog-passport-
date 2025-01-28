@@ -1,5 +1,5 @@
 const express = require('express');
-const port = 1000;
+const port = 2204;
 const app = express();
 const cookieparser = require('cookie-parser');
 
@@ -36,7 +36,8 @@ app.use('/', express.static(path.join(__dirname, '/public')));
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-app.use('/', require('./routes/indexRoutes'));
+app.use("/",require('./routes/userRoutes'))
+app.use('/admin', require('./routes/indexRoutes'));
 
 
 

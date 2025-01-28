@@ -1,0 +1,44 @@
+<%- include('../header') %>
+
+  <div class="row">
+    <div class="col-12">
+
+      
+      <div class="container mt-5">
+        <div class="row">
+          <% book.map((book, i)=> { %>
+            <div class="col-md-4 mb-4">
+              <div class="card h-100">
+                <img src="<%=book.image%>" class="card-img-top" alt="<%= book.name %>"
+                  style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                  <h5 class="card-title text-capitalize">
+                    <%= book.name %>
+                  </h5>
+                  <p class="card-text">
+                    <strong>Category:</strong>
+                      <strong>SubCategory:</strong>
+                        
+                          <strong>Price:</strong> $<%= book.price %><br>
+                            <strong>Description:</strong>
+                            <%= book.description %>
+                  </p>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                  <a href="/admin/book/deletebook/<%= book.id %>" class="btn btn-danger">
+                    <i class="fa-solid fa-trash-can"></i> Delete
+                  </a>
+                  <a href="/admin/book/editebook?id=<%= book.id %>" class="btn btn-primary">
+                    <i class="fa-solid fa-pen"></i> Edit
+                  </a>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <%- include('../footer') %>

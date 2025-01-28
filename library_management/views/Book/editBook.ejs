@@ -1,0 +1,103 @@
+<%- include('../header') %>
+
+<style>
+  .card{
+    max-width: 700px !important;
+    margin-left: 20% !important;
+  }
+  .card-body{
+    margin-top: 10% !important;
+  }
+</style>
+
+  <div class="body-wrapper-inner">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold mb-4">Edit Book</h5>
+          <div class="card">
+            <div class="card-body">
+              <form method="post" action="/admin/book/updateBookdetail/<%= Book.id %>" enctype="multipart/form-data">
+                
+                
+                
+                <div class="mb-3">
+                  <label for="exampleInputEma onchange=" exSubCategoryRecord()"il1" class="form-label">Book
+                    Name</label>
+                  <input value="<%= Book.name %>" type="text" name="name" class="form-control text-capitalize" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEma onchange=" exSubCategoryRecord()"il1" class="form-label">Book
+                    Price</label>
+                  <input value="<%= Book.price %>" type="number" name="price" class="form-control text-capitalize" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEma onchange=" exSubCategoryRecord()"il1" class="form-label">Book
+                    Description</label>
+                  <input value="<%= Book.description %>" type="text" name="description" class="form-control text-capitalize" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEma onchange=" exSubCategoryRecord()"il1" class="form-label">Book
+                    Image</label>
+                  <input type="file" name="image" class="form-control text-capitalize" id="exampleInputEmail1">
+                  <br>
+                  <img src="<%= Book.image %>" style="width: 100px;margin-top: 10px;" class="card-img rounded-0" alt="">
+                </div>
+                <button type="submit" class="btn btn-primary">Edit</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    const exSubCategoryRecord = () => {
+      let category = document.getElementById('category').value;
+      $.ajax({
+        type: 'GET',
+        url: `/exsubcategory/ajaxcatfetch?id=${category}`,
+        success: function (res) {
+          let category = res.category;
+
+          let tbl = "";
+          tbl += `<option value="">-----select-subcategory-option------</option>`
+          category.map((subcat) => {
+            tbl += `
+                      <option value=${subcat._id}>${subcat.subcategory}</option>
+                  `
+          })
+          document.getElementById("subcategory").innerHTML = tbl;
+        }
+      })
+    }
+
+    const subcatrecord = () => {
+      let subcategory = document.getElementById('subcategory').value
+      $.ajax({
+        type: "GET",
+        url: `/Book/ajaxcatfetch?id=${subcategory}`,
+        success: function (res) {
+          const subcategory = res.subcategory
+
+          let tbl = ""
+          tbl += `<option value="">-----select-exsubcategory-option--</option>`
+          subcategory.map((subcat) => {
+            tbl += `
+              <option value=${subcat._id} > ${subcat.exsubcategory}</option>
+
+             `
+          })
+          document.getElementById("exsubcategory").innerHTML = tbl
+
+        }
+
+      })
+    }
+  </script> -->
+
+  <%- include('../footer') %>

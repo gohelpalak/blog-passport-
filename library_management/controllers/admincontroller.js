@@ -4,19 +4,19 @@ const nodemailer = require('nodemailer')
 
 const loginPage = (req, res) => {
     if (res.locals.users) {
-        return res.redirect("/dashboard");
+        return res.redirect("/admin/dashboard");
     }
     return res.render('login');
 }
 const Register = (req, res) => {
     if (req.isAuthenticated()) {
-        return res.redirect("/dashboard");
+        return res.redirect("/admin/dashboard");
     } else {
         return res.render("register");
     }
 }
 const loginUser = async (req, res) => {
-    return res.redirect('/dashboard')
+    return res.redirect('/admin/dashboard')
 }
 const registerUser = async (req, res) => {
     try {
@@ -28,7 +28,7 @@ const registerUser = async (req, res) => {
             email: email,
             password: password,
         })
-        return res.redirect('/')
+        return res.redirect('/admin')
     } catch (err) {
         console.log(err);
         return false;
@@ -44,7 +44,7 @@ const logout = (req, res) => {
             console.log(err);
             return false;
         }
-        return res.redirect('/');
+        return res.redirect('/admin');
     });
 }
 
@@ -57,7 +57,7 @@ const submitEmail = async (req, res) => {
         const email = req.body.useremail;
         const user = await adminmodel.findOne({ email: email })
         if (!user) {
-            return res.redirect('/');
+            return res.redirect('/admin');
         }
         const otp = Math.floor(Math.random() * 100000)
 
@@ -129,7 +129,7 @@ const newPass = async (req, res) => {
             await adminmodel.findOneAndUpdate({ email: useremail }, {
                 password: newpass
             })
-            return res.redirect('/')
+            return res.redirect('/admin')
         } else {
             console.log('newpassword and confirm password does not match');
             return res.redirect('/setnewpass')
@@ -156,7 +156,7 @@ const changepass = async (req, res) => {
             await adminmodel.findOneAndUpdate({ email: email }, {
                 password: confirmpass
             })
-            return res.redirect('/')
+            return res.redirect('/admin')
         } else {
             console.log('newpassword and confirm password does not match');
             return res.redirect('/changepass')

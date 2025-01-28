@@ -1,4 +1,19 @@
 <%- include('../header') %>
+<style>
+  .card {
+      max-width: 700px !important;
+      margin-left: 20% !important;
+    }
+
+    .card-body {
+      margin-top: 11% !important;
+    }
+
+    .table {
+      margin-left: 300px !important;
+      max-width: 800px !important;
+    }
+</style>
 
 <div class="row">
 <div class="col-12">
@@ -23,19 +38,19 @@
                 <%= cat.name %>
             </td>
             <td>
-                <a href="/category/deleteCategory?id=<%=cat.id%>"
+                <a href="/admin/category/deleteCategory?id=<%=cat.id%>"
                     class="btn btn-danger py-2"
                     style="font-size: 16px !important;">
-                    <i class="fa-solid fa-trash-can"></i>
+                    <i class="fa-solid fa-trash-can">Delete</i>
                 </a>
-                <a href="/category/editCategory?id=<%=cat.id%>"
+                <a href="/admin/category/editCategory?id=<%=cat.id%>"
                     class="btn btn-primary py-1 ms-2 "
                     style="font-size: 20px !important;">
-                    <i class="fa-solid fa-pen"></i>
+                    Edit
                 </a>
             </td>
             <td>
-                <a href="/category/changeStatus?id=<%= cat.id %>&status=<%= cat.status %>" 
+                <a href="/admin/category/changeStatus?id=<%= cat.id %>&status=<%= cat.status %>" 
                     class="<% if(cat.status == `active`) { %> btn btn-info py-2 px-3 <% } else { %> btn btn-warning py-2 px-3 <% } %>">
                     <%= cat.status %>
                 </a>

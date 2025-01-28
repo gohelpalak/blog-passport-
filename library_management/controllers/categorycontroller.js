@@ -10,7 +10,7 @@ const addcategoryfieldPage = async (req, res) => {
         await categoryModel.create({
             name: category
         })
-        return res.redirect('/category/addcategory')
+        return res.redirect('/admin/category/addcategory')
     } catch (err) {
         console.log('err');
         return false;
@@ -20,7 +20,7 @@ const addcategoryfieldPage = async (req, res) => {
 const viewCategoryPage = async (req, res) => {
     try {
         const single = await categoryModel.find({})
-        return res.render('./category/viewcategory', {
+        return res.render('category/viewcategory', {
             single
         })
 
@@ -34,7 +34,7 @@ const deleteCategory = async (req, res) => {
     try {
         const id = req.query.id;
         await categoryModel.findByIdAndDelete(id);
-        return res.redirect("/category/viewcategory");
+        return res.redirect("/admin/category/viewcategory");
     } catch (err) {
         console.log(err);
         return false;
@@ -61,7 +61,7 @@ const updateCategory = async (req, res) => {
        await categoryModel.findByIdAndUpdate(editid,{
           name
       });
-      return res.redirect("/category/viewcategory");
+      return res.redirect("/admin/category/viewcategory");
     } catch (err) {
       console.log(err);
       return false;
@@ -80,12 +80,12 @@ const changeStatus = async (req,res)=>{
             await categoryModel.findByIdAndUpdate(id,{
                 status:"deactive"
             })
-            return res.redirect("/category/viewcategory");
+            return res.redirect("/admin/category/viewcategory");
         } else {
             await categoryModel.findByIdAndUpdate(id,{
                 status:"active"
             })
-            return res.redirect("/category/viewcategory");
+            return res.redirect("/admin/category/viewcategory");
         }
     } catch (error) {
         console.log(error);

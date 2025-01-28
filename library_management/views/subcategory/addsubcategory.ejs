@@ -1,4 +1,13 @@
 <%- include('../header') %>
+<style>
+  .card{
+    max-width: 700px !important;
+    margin-left: 20% !important;
+  }
+  .card-body{
+    margin-top: 11% !important;
+  }
+</style>
 
 <div class="body-wrapper-inner">
     <div class="container-fluid">
@@ -7,7 +16,7 @@
           <h5 class="card-title fw-semibold mb-4">Add SubCategory</h5>
           <div class="card">
             <div class="card-body">
-              <form method="post" action="/subcategory/addsubcategoryfield">
+              <form method="post" action="/admin/subcategory/addsubcategoryfield">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Category Field</label>
                   <select name="category" class="form-select">

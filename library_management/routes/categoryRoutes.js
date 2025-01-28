@@ -8,7 +8,7 @@ const routes = express.Router();
 
 routes.use('/addcategory',passport.checkUser,addCategory);
 routes.post('/addcategoryfield',addcategoryfieldPage);
-routes.use('/viewcategory',passport.checkUser,viewCategoryPage);
+routes.get('/viewcategory',passport.checkUser,viewCategoryPage);
 
 routes.get('/deletecategory',deleteCategory);
 routes.get('/editcategory',passport.checkUser,editCategory);

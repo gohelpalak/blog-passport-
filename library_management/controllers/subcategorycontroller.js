@@ -30,7 +30,7 @@ const addSubCategoryPage = async (req, res) => {
             categoryid: category,
             subcategory: subcategory,
         })
-        return res.redirect("/subcategory/viewsubcategory");
+        return res.redirect("/admin/subcategory/viewsubcategory");
     } catch (err) {
         console.log(err);
         return false
@@ -54,7 +54,7 @@ const deleteSubCategory = async (req, res) => {
     try {
         const id = req.query.id
         await subcategoryModel.findByIdAndDelete(id);
-        return res.redirect("/subcategory/viewsubcategory");
+        return res.redirect("/admin/subcategory/viewsubcategory");
 
     } catch (err) {
         console.log(err);
@@ -85,7 +85,7 @@ const updateSubCategory = async (req, res) => {
             categoryid: category,
             subcategory: subcategory
         })
-        return res.redirect('/subcategory/viewsubcategory');
+        return res.redirect('/admin/subcategory/viewsubcategory');
     } catch (err) {
         console.log(err);
         return false;
@@ -105,7 +105,7 @@ const changeStatus = async (req, res) => {
                 status: "active"
             });
         }
-        return res.redirect("/subcategory/viewsubcategory");
+        return res.redirect("/admin/subcategory/viewsubcategory");
     } catch (err) {
         console.log(err);
         return false;
