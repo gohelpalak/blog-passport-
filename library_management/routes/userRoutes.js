@@ -1,7 +1,9 @@
 const express=require('express');
-const userRoutes=express.Router();
+const users = require('../models/adminmodel');
+const userRoutes=express.Router();  
+const BookModel=require('../models/bookmodel');
+const { viewAllBook } = require('../controllers/usercontroller');
 
-userRoutes.get('/',(req,res)=>{
-    res.render('userPage');
-})
+userRoutes.get('/',viewAllBook)
+
 module.exports=userRoutes

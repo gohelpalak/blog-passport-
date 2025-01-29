@@ -14,6 +14,9 @@
 }
 
 body {
+ 
+}
+.wrap{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,96 +131,34 @@ body {
 }
 
 </style>
-<body>
-    <!-- <div class="product-grid" id="product-grid"></div> -->
 
+<body>
+<div style="background: linear-gradient(135deg, #00c6ff, #0072ff); display: flex; justify-content: center; padding-top: 20px; padding-bottom: 20px;">
+  <button class="buy-button"><a href="/admin" style="color: white;">Admin Side</a></button>
+
+</div >
+    <!-- <div class="product-grid" id="product-grid"></div> -->
+<div class="wrap">
 
 <div class="product-grid">
+
+
+<% book.map((singlebook)=>{%>
   <div class="product-card">
     <div class="product-image">
-      <img src="https://picsum.photos/id/0/400/400" alt="Laptop">
+      <img src="<%=singlebook.image%>" alt="Laptop" height="200" width="200" style="object-fit: cover;">
     </div>
     <div class="product-info">
-      <h2 class="product-name">Laptop</h2>
-      <p class="product-description">Powerful laptop for work and play.</p>
-      <p class="product-price">$999.99</p>
-      <button class="buy-button">Buy Now</button>
+      <h2 class="product-name"><%=singlebook.name%></h2>
+      <p class="product-description"><%=singlebook.description%></p>
+      <p class="product-price">$<%=singlebook.price%></p>
+      <button class="buy-button">Add to cart</button>
     </div>
   </div>
 
-  <div class="product-card">
-    <div class="product-image">
-      <img src="https://picsum.photos/id/175/400/400" alt="Clock">
-    </div>
-    <div class="product-info">
-      <h2 class="product-name">Clock</h2>
-      <p class="product-description">Stylish wall clock for your home.</p>
-      <p class="product-price">$29.99</p>
-      <button class="buy-button">Buy Now</button>
-    </div>
-  </div>
-  
-  <div class="product-card">
-    <div class="product-image">
-      <img src="https://picsum.photos/id/237/400/400" alt="Cute Puppy">
-    </div>
-    <div class="product-info">
-      <h2 class="product-name">Just a Cute Puppy</h2>
-      <p class="product-description">Isn't this puppy adorable?</p>
-      <p class="product-price">N/A</p>
-      <button class="buy-button" disabled>Not a Product</button>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <div class="product-image">
-      <img src="https://picsum.photos/id/250/400/400" alt="Camera">
-    </div>
-    <div class="product-info">
-      <h2 class="product-name">Camera</h2>
-      <p class="product-description">Capture life's moments with this camera.</p>
-      <p class="product-price">$499.99</p>
-      <button class="buy-button">Buy Now</button>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <div class="product-image">
-      <img src="https://picsum.photos/id/312/400/400" alt="Honey">
-    </div>
-    <div class="product-info">
-      <h2 class="product-name">Honey</h2>
-      <p class="product-description">Pure, natural honey from the hive.</p>
-      <p class="product-price">$19.99</p>
-      <button class="buy-button">Buy Now</button>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <div class="product-image">
-      <img src="https://picsum.photos/id/364/400/400" alt="Airplane">
-    </div>
-    <div class="product-info">
-      <h2 class="product-name">Airplane</h2>
-      <p class="product-description">Fly high with our latest airplane model.</p>
-      <p class="product-price">$89.99</p>
-      <button class="buy-button">Buy Now</button>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <div class="product-image">
-      <img src="https://picsum.photos/id/429/400/400" alt="Raspberries">
-    </div>
-    <div class="product-info">
-      <h2 class="product-name">Raspberries</h2>
-      <p class="product-description">Fresh and delicious raspberries.</p>
-      <p class="product-price">$5.99</p>
-      <button class="buy-button">Buy Now</button>
-    </div>
-  </div>
+<%})%>
 </div>
-
+</div>
     
 </body>
 </html>
