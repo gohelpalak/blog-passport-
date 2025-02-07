@@ -1,7 +1,7 @@
-const express = require("express");
-const routes =express.Router();
+const express = require('express');
+const indexRoutes = express.Router();
 
-routes.use("/admin",require('./admin.routes'));
-// routes.use("/user",require("./user.routes"));
+indexRoutes.use('/admin', require('../routes/admin.routes'));
+indexRoutes.use('/user', require('../routes/user.routes'));
 
-module.exports = routes;
+module.exports = indexRoutes;
